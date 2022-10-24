@@ -1,0 +1,150 @@
+/* 
+Questions ou points à éclaircir
+X-Small	None	<576px
+Small	sm	≥576px
+Medium	md	≥768px
+Large	lg	≥992px
+Extra large	xl	≥1200px
+Extra extra large	xxl	≥1400px
+
+
+largeur maximale d'écran?
+
+un seul fichier css ou par block?
+
+
+*/
+
+
+
+/*==================== RESET CSS ====================*/
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+/*==================== FONT-FAMILY ====================*/
+html {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+}
+
+/*==================== REM PIXELS VARIABLES ====================*/
+body {
+    min-width: 320px;
+}
+
+/* 
+Si besoin de définir des variables
+:root {
+}
+*/
+
+/*==================== CLASSES UTILITAIRES ====================*/
+
+
+/*==================== HEADER ====================*/
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    border-bottom: solid 1.5px #DADADA;
+}
+
+.header_logo_apec {
+    background: #D9D9D9;
+    margin: 10px 40px;
+    width: 178px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.header_toolbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}
+
+.header_toolbox button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin:0px 10px;
+    font-size: 12px;
+}
+
+@media only screen and (max-width: 768px) {
+    .header_toolbox button span{
+        display: none;
+    }
+}
+
+.header_toolbox button img {
+    width: 31px;
+    margin-bottom:5px;
+}
+
+.header_toolbox_links {
+    padding: 0px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    height: 30px;
+    border-left:1.5px solid black;
+    border-right:1.5px solid black;
+}
+
+@media only screen and (max-width: 1024px) {
+    .header_toolbox_links{
+        display: none;
+    }
+}
+
+.header_toolbox_links a {
+    cursor: pointer;
+    font-weight: 600;
+    color: #000000;
+    text-decoration: none;
+}
+
+
+/*==================== SECTION ====================*/
+section {
+    margin: 22px 40px 38px 40px;
+}
+
+.back_button a {
+    font-weight: 600;
+    text-decoration-line: underline;
+    color: #000000;
+    display: flex;
+    align-items: center;
+}
+
+.back_button a img {
+    width: 12px;
+    margin-right: 12px;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .back_button a img {
+        width: 33px;
+        margin-right: 26px;
+    }
+}
