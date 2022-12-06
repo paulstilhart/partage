@@ -1,0 +1,132 @@
+/*==================== WIDTH HEIGHT ====================*/
+
+.mw_1140_auto {
+    max-width: 1140px;
+    margin: auto;
+}
+
+
+.mw_250 {
+    max-width: 250px;
+}
+
+
+
+
+/*==================== MARGIN ====================*/
+.m_auto {
+    margin: auto;
+}
+
+.my_auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*==================== GAP ====================*/
+
+
+/*==================== FLEXBOX ====================*/
+.flex {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex_center {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.flex_start_start {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: start;
+}
+
+.flex_start_center {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.flex_center_center {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex_center_start {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: start;
+}
+
+.flex_between {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.flex_between_center {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex_column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex_column_center_center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex_column_reverse {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.flex_column_end {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.flex_column_between {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.flex_wrap {
+    flex-wrap: wrap;
+}
+
+.flex_nowrap {
+    flex-wrap: nowrap;
+}
+
+
+/*==================== TEXT ALIGN & RADIUS & DNONE ====================*/
+.text_center {
+    text-align: center;
+}
+
+.text_left {
+    text-align: left;
+}
+
+.dnone {
+    display: none;
+}
