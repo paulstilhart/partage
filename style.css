@@ -893,7 +893,7 @@ nav>:nth-child(3):hover {
     }
 }
 
-@media only screen and (max-width: 1400px) {
+@media only screen and (max-width: 1200px) {
     header .wrapper.active {
         height: auto;
         justify-content: center;
@@ -936,7 +936,7 @@ nav>:nth-child(3):hover {
 
 /*================================ SECTION 1 INTRODUCTION =======================================*/
 .section_introduction {
-    padding: 192px 64px 88px 64px;
+    padding: 181px 64px 88px 64px;
 }
 
 .section_introduction>div:first-of-type {
@@ -1008,12 +1008,12 @@ nav>:nth-child(3):hover {
 }
 
 .section_introduction {
-    padding: 192px 64px 88px 64px;
+    padding: 181px 64px 88px 64px;
 }
 
 @media only screen and (max-width: 1440px) {
     .section_introduction {
-        padding: 192px 32px 88px 32px;
+        padding: 181px 32px 88px 32px;
     }
 }
 
@@ -1031,13 +1031,13 @@ nav>:nth-child(3):hover {
 
 @media only screen and (max-width: 768px) {
     .section_introduction {
-        padding: 192px 32px 45px 32px;
+        padding: 181px 32px 45px 32px;
     }
 }
 
 @media only screen and (max-width: 576px) {
     .section_introduction {
-        padding: 192px 24px 90px 24px;
+        padding: 181px 24px 90px 24px;
 
     }
 
@@ -1336,7 +1336,7 @@ nav>:nth-child(3):hover {
 
 /*================================ SECTION 1 SOUS PAGE INTRODUCTION =======================================*/
 .section_introduction_page {
-    padding: 220px 24px 0px 24px;
+    padding: 175px 24px 0px 24px;
 }
 
 .section_introduction_page_content {
@@ -1355,13 +1355,13 @@ nav>:nth-child(3):hover {
 
 @media only screen and (max-width: 1200px) {
     .section_introduction_page {
-        padding: 220px 24px 0px 24px;
+        padding: 175px 24px 0px 24px;
     }
 }
 
 @media only screen and (max-width: 576px) {
     .section_introduction_page {
-        padding: 220px 24px 0px 24px;
+        padding: 175px 24px 0px 24px;
     }
 
     .section_introduction_page_img {
@@ -1394,7 +1394,7 @@ nav>:nth-child(3):hover {
     z-index: -1;
 }
 
-.section_goals.business::before {
+.section_goals.realestate::before {
     background-color: var(--blue_light);
 }
 
@@ -1446,17 +1446,30 @@ nav>:nth-child(3):hover {
     max-width: 655px;
 }
 
+.section_goals_content.legal h3 {
+    max-width: 676px;
+}
+
 @media only screen and (min-width: 1200px) {
     .section_goals_content_text img:first-of-type {
         top: 30px;
     }
 
+
     .section_goals_content_text.legal img:first-of-type {
-        left: -40px;
+        left: -83px;
     }
 
     .section_goals_content_text img:last-of-type {
         bottom: 30px;
+    }
+
+    .section_goals_content_text.legal {
+        padding-top: 80px;
+    }
+
+    .section_goals_content.legal>.section_goals_content_img{
+        padding-top: 174px;
     }
 }
 
