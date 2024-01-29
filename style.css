@@ -1420,6 +1420,7 @@ nav>:nth-child(3):hover {
 
 .section_goals_content_img>img {
     width: 100%;
+    filter: drop-shadow(4px 4px 9px rgba(0, 0, 0, 0.10));
 }
 
 .section_goals_content_img p {
