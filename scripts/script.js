@@ -1,5 +1,5 @@
 const title = document.querySelector('.js_title_animation');
-const texts = ["Commerce & Luxe", "Légal & RH", "Immobilier"];
+const texts = ["Commerce & Luxe", "Immobilier", "Légal & RH"];
 let currentTextIndex = 0;
 
 const typingSpeed = 150;
