@@ -66,12 +66,19 @@ ul {
     --blue_strong: #38516B;
     --blue: #236FE0;
     --blue_light: #236FE014;
+    /* background: rgba(35, 111, 224, 0.08);*/
     --green: #1DD6C9;
     --green_light: #F5FFFE;
     --pink: #FFBDE0;
     --pink_light: #FFBDE026;
     --red: #800639;
     --red_light: #F8F2F5;
+    --purple: #710FAA;
+    --purple_light: #FEFBFF;
+    --green_life: #69D186;
+    --green_life_light: #69d18614;
+    /* rgba(105, 209, 134, 0.08) */
+
     /* SHADOW-1 */
     --shadow-1: 0px 4px 50px 0px rgba(56, 81, 107, 0.15);
 }
@@ -178,6 +185,38 @@ ul {
 
 .color_red_light {
     color: var(--red_light);
+}
+
+.background_purple {
+    background-color: var(--purple);
+}
+
+.color_purple {
+    color: var(--purple);
+}
+
+.background_purple_light {
+    background-color: var(--purple_light);
+}
+
+.color_purple_light {
+    color: var(--purple_light);
+}
+
+.background_green_life {
+    background-color: var(--green_life);
+}
+
+.color_green_life {
+    color: var(--green_life);
+}
+
+.background_green_life_light {
+    background-color: var(--green_life_light);
+}
+
+.color_green_life_light {
+    color: var(--green_life_light);
 }
 
 /*================================ FONTS =======================================*/
@@ -820,17 +859,128 @@ header.header_big .header_scroll {
     border-bottom-color: var(--red);
 }
 
-nav>:nth-child(1):hover {
-    border-bottom-color: var(--pink);
+.nav_links.finance:hover {
+    border-bottom-color: var(--purple);
 }
 
-nav>:nth-child(2):hover {
-    border-bottom-color: var(--blue);
+.nav_links.life:hover {
+    border-bottom-color: var(--green_life);
 }
 
-nav>:nth-child(3):hover {
-    border-bottom-color: var(--red);
+
+button.nav_links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
+
+.nav_links_arrow {
+    display: inline-block;
+    width: 12px;
+    height: 6px;
+    background-image: url('./sources/icons/arrow/arrow_down_blue_strong.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.2s;
+}
+
+.nav_links_menu_toggler {
+    position: relative;
+}
+
+.nav_links_menu_toggler[aria-expanded="true"] .nav_links_arrow {
+    transform: rotate(180deg);
+    /* équivalent à rotate-180 */
+}
+
+
+.nav_links_menu_content {
+    position: absolute;
+    margin-top: 16px;
+    background-color: white;
+    box-shadow: 0px 0px 28.2px 0px rgba(0, 0, 0, 0.05);
+    padding: 32px;
+    border-radius: 16px;
+    display: none;
+    flex-direction: column;
+    gap: 24px;
+    transform: translateX(-50%);
+    left: 50%;
+}
+
+.nav_links_menu_toggler[aria-expanded="true"] .nav_links_menu_content {
+    display: flex;
+}
+
+
+.nav_links_menu_content>a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    /* 150% */
+    letter-spacing: 0.5px;
+}
+
+.nav_links_menu_content>a:hover {
+    color: white;
+}
+
+.nav_links_menu_content>:nth-child(1):hover {
+    background-color: var(--pink);
+}
+
+.nav_links_menu_content>:nth-child(2):hover {
+    background-color: var(--blue);
+}
+
+.nav_links_menu_content>:nth-child(3):hover {
+    background-color: var(--green_life);
+}
+
+.nav_links_menu_content>:nth-child(4):hover {
+    background-color: var(--purple);
+}
+
+.nav_links_menu_content>a>span {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+
+.nav_links_menu_content>a>span:first-of-type {
+    border-radius: 8px;
+    background-color: var(--white_break);
+    width: 44px;
+    height: 42px;
+    flex: none;
+    background-image: url('./sources/icons/workyn/blue/business_1357_1334.png');
+    background-size: 41% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.nav_links_menu_content>:nth-child(2)>span:first-of-type {
+    background-image: url('./sources/icons/workyn/blue/realestate_1358_1334.png');
+}
+
+.nav_links_menu_content>:nth-child(3)>span:first-of-type {
+    background-image: url('./sources/icons/workyn/blue/life.svg');
+}
+
+
+.nav_links_menu_content>:nth-child(4)>span:first-of-type {
+    background-image: url('./sources/icons/workyn/blue/finance.svg');
+}
+
+
+
 
 /* pas possible car trop d'éléments au scroll */
 /* nav>:nth-child(3) {
@@ -929,6 +1079,17 @@ nav>:nth-child(3):hover {
     nav>:nth-child(3) {
         margin-right: 0px;
     }
+
+    button.nav_links {
+        display: none;
+    }
+
+    .nav_links_menu_content {
+        display: flex;
+        position: static;
+        transform: none;
+    }
+
 }
 
 
@@ -1077,8 +1238,9 @@ nav>:nth-child(3):hover {
 .section_brands_cards {
     padding: 0px 24px;
     position: relative;
-    display: flex;
-    flex-flow: row nowrap;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 413px));
+    /* 2 colonnes avec une largeur max de 413px */
     justify-content: center;
     gap: 36px;
 }
@@ -1087,8 +1249,6 @@ nav>:nth-child(3):hover {
     border-radius: 32px;
     padding: 48px 40px;
     position: relative;
-    width: calc(33.33% - 24px);
-    max-width: 413px;
 }
 
 .section_brands_card_logo {
@@ -1133,20 +1293,6 @@ nav>:nth-child(3):hover {
 
 @media only screen and (max-width: 992px) {
 
-    .section_brands_cards {
-        flex-flow: column nowrap;
-        align-items: center;
-    }
-
-    .section_brands_card {
-        width: 100%;
-        max-width: 413px;
-    }
-
-    .section_brands_card {
-        padding: 32px;
-    }
-
     .section_brands_card_logo {
         width: 268px;
         margin: 0 auto 24px auto;
@@ -1156,6 +1302,15 @@ nav>:nth-child(3):hover {
 
 
 @media only screen and (max-width: 768px) {
+    .section_brands_cards {
+        grid-template-columns: repeat(1, minmax(0, 413px));
+    }
+
+
+    .section_brands_card {
+        padding: 32px;
+    }
+
     .section_brands_content {
         padding: 45px 124px 80px 124px;
     }
@@ -1391,7 +1546,7 @@ nav>:nth-child(3):hover {
     width: 100%;
     height: 60%;
     background-color: var(--pink_light);
-    z-index: -1;
+
 }
 
 .section_goals.realestate::before {
@@ -1402,7 +1557,13 @@ nav>:nth-child(3):hover {
     background-color: var(--red_light);
 }
 
+.section_goals.finance::before {
+    background-color: var(--purple_light);
+}
 
+.section_goals.life::before {
+    background-color: var(--green_life_light);
+}
 
 .section_goals_ribbon_container {
     position: absolute;
@@ -1415,6 +1576,11 @@ nav>:nth-child(3):hover {
 
 .section_goals_content_img {
     padding-top: 200px;
+    max-width: 436px;
+}
+
+.section_goals_content_img.life {
+    padding-top: 115px;
     max-width: 436px;
 }
 
@@ -1451,25 +1617,40 @@ nav>:nth-child(3):hover {
     max-width: 676px;
 }
 
+.section_goals_content.finance h3 {
+    max-width: 676px;
+}
+
+.section_goals_content.life h3 {
+    max-width: 655px;
+}
+
 @media only screen and (min-width: 1200px) {
     .section_goals_content_text img:first-of-type {
         top: 30px;
     }
 
 
-    .section_goals_content_text.legal img:first-of-type {
+    .section_goals_content_text.legal img:first-of-type,
+    .section_goals_content_text.finance img:first-of-type {
         left: -83px;
     }
+
+    /*     .section_goals_content_text.finance img:last-of-type {
+        bottom: 10px;
+    } */
 
     .section_goals_content_text img:last-of-type {
         bottom: 30px;
     }
 
-    .section_goals_content_text.legal {
+    .section_goals_content_text.legal,
+    .section_goals_content_text.finance {
         padding-top: 80px;
     }
 
-    .section_goals_content.legal>.section_goals_content_img{
+    .section_goals_content.legal>.section_goals_content_img,
+    .section_goals_content.finance>.section_goals_content_img {
         padding-top: 174px;
     }
 }
@@ -1547,17 +1728,28 @@ nav>:nth-child(3):hover {
     flex-wrap: wrap;
 }
 
-.section_expert_separator.realestate {
+.section_expert_container.life {
+    max-width: 992px;
+    padding: 48px 64px;
+    flex-wrap: wrap;
+    margin-bottom: 80px;
+}
+
+.section_expert_container.realestate .section_expert_separator,
+.section_expert_container.life .section_expert_separator {
     width: 1.5px;
     height: 25px;
     background-color: var(--blue_strong);
 }
 
-.section_expert_container.realestate h3 {
-    white-space: nowrap
+
+.section_expert_container.realestate h3,
+.section_expert_container.life h3 {
+    white-space: nowrap;
 }
 
-.section_expert_container.realestate {
+.section_expert_container.realestate,
+.section_expert_container.life {
     gap: 20px;
 }
 
@@ -1575,11 +1767,25 @@ nav>:nth-child(3):hover {
     row-gap: 20px;
 }
 
+.section_expert_container.finance {
+    padding: 0;
+    border-radius: unset;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    column-gap: 28px;
+    row-gap: 20px;
+}
+
 .section_expert_domain {
     min-width: 282px;
     display: flex;
     flex-flow: column nowrap;
     gap: 21px;
+}
+
+.section_expert_container.finance>.section_expert_domain {
+    flex: 1;
 }
 
 .section_expert_domain::before {
@@ -1605,6 +1811,47 @@ nav>:nth-child(3):hover {
     background-image: url('./sources/logos/sectors/legal/card4.svg');
 }
 
+.section_expert_container>:nth-child(1):before {
+    background-image: url('./sources/logos/sectors/finance/card1.svg');
+}
+
+.section_expert_container>:nth-child(2):before {
+    background-image: url('./sources/logos/sectors/finance/card2.svg');
+}
+
+.section_expert_container>:nth-child(3):before {
+    background-image: url('./sources/logos/sectors/finance/card3.svg');
+}
+
+.section_expert_container.life1>:nth-child(1)::before{
+    background-image: url('./sources/logos/sectors/life/card1.svg');
+}
+
+.section_expert_container.life1>:nth-child(2)::before{
+    background-image: url('./sources/logos/sectors/life/card2.svg');
+}
+
+.section_expert_container.life1>:nth-child(3)::before{
+    background-image: url('./sources/logos/sectors/life/card3.svg');
+}
+
+.section_expert_container.life2>:nth-child(1)::before{
+    background-image: url('./sources/logos/sectors/life/card4.svg');
+}
+
+.section_expert_container.life2>:nth-child(2)::before{
+    background-image: url('./sources/logos/sectors/life/card5.svg');
+}
+
+.section_expert_container.life2>:nth-child(3)::before{
+    background-image: url('./sources/logos/sectors/life/card6.svg');
+}
+
+.section_expert_container.life2{
+    padding-top: 80px;
+}
+
+
 
 .section_expert_domain_content {
     padding: 16px 16px 16px 24px;
@@ -1612,6 +1859,11 @@ nav>:nth-child(3):hover {
     background-color: var(--white);
     box-shadow: var(--shadow-1);
     flex: auto;
+}
+
+.section_expert_container.finance .section_expert_domain_content {
+    padding: 24px;
+
 }
 
 .section_expert_domain_content ul {
@@ -1631,7 +1883,9 @@ nav>:nth-child(3):hover {
 }
 
 @media only screen and (max-width: 1400px) {
-    .section_expert_container.legal {
+
+    .section_expert_container.legal,
+    .section_expert_container.finance {
         flex-flow: row wrap;
     }
 
@@ -1656,12 +1910,14 @@ nav>:nth-child(3):hover {
         height: 1.5px;
     }
 
-    .section_expert_container.realestate {
+    .section_expert_container.realestate,
+    .section_expert_container.life {
         flex-direction: column;
         padding: 48px 16px;
     }
 
-    .section_expert_separator.realestate {
+    .section_expert_container.realestate .section_expert_separator,
+    .section_expert_container.life .section_expert_separator {
         rotate: 90deg;
     }
 }
@@ -1675,6 +1931,10 @@ nav>:nth-child(3):hover {
     .section_expert_domain::before {
         width: 100px;
         height: 100px;
+    }
+
+    .section_expert_container.life2{
+        padding-top: 20px;
     }
 
 }
