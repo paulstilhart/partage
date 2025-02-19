@@ -1610,6 +1610,7 @@ button.nav_links {
 }
 
 .section_goals_content h3 {
+    width: 100%;
     max-width: 655px;
 }
 
