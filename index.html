@@ -12,10 +12,116 @@
 
     <!-- SCRIPT JS -->
     <script type="module" src="./script.js" defer></script>
+
+    <script defer src="./script_popin.js"></script>
 </head>
 
 
 <body>
+
+    <button class="js_popin_open">Ouvrir la pop-in</button>
+
+    <div class="popin js_popin">
+        <div class="background_white_classic color_black">
+            <div class="popin_header">
+                <div>
+                    <h2>Suivi de parrainage</h2>
+                    <span class="popin_close js_popin_close">&nbsp;&times;&nbsp;</span>
+                </div>
+                <div>
+                    <div>
+                        <h4>Parrain</h4>
+                        <p>Madelyn Tort</p>
+                    </div>
+                    <div>
+                        <h4>Mail</h4>
+                        <p>madelyntorff@gmail.com</p>
+                    </div>
+                    <div>
+                        <h4>Téléphone</h4>
+                        <p>07 00 00 00 00</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <h4>Filleul</h4>
+                        <p>Angel Lipshutz</p>
+                    </div>
+                    <div>
+                        <h4>Mail</h4>
+                        <p>angellipshutz@gmail.com</p>
+                    </div>
+                    <div>
+                        <h4>Téléphone</h4>
+                        <p>07 00 00 00 00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="popin_content">
+                <h2>Étapes d’avancement</h2>
+                <div>
+                    <div data-state="" class="popin_step">
+                        <div>
+                            <hr>
+                            <span></span>
+                            <hr>
+                        </div>
+                        <div>
+                            <div>
+                                <h4>Vente validé</h4>
+                                <span></span>
+                            </div>
+                            <p>Le filleul a acheté un appareil auditif. Validation de la deuxièmes étape pour le
+                                parrain. </p>
+                        </div>
+                    </div>
+                    <div data-state="validate" class="popin_step">
+                        <div>
+                            <hr>
+                            <span></span>
+                            <hr>
+                        </div>
+                        <div>
+                            <div>
+                                <h4>Règlement validé</h4>
+                                <span>17/06/25</span>
+                            </div>
+                            <p>Paiement de l’avantage parrainage validé</p>
+                        </div>
+                    </div>
+                    <div data-state="fail" class="popin_step">
+                        <div>
+                            <hr>
+                            <span></span>
+                            <hr>
+                        </div>
+                        <div>
+                            <div>
+                                <h4>Échec de règlement</h4>
+                                <span>17/06/25</span>
+                            </div>
+                            <p>Échec dans le paiement de l’avantage parrainage</p>
+                        </div>
+                    </div>
+                    <div data-state="progress" class="popin_step">
+                        <div>
+                            <hr>
+                            <span></span>
+                            <hr>
+                        </div>
+                        <div>
+                            <div>
+                                <h4>En cours</h4>
+                                <span></span>
+                            </div>
+                            <p>Lien parrain filleul réalisé, validation en attente</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- CLASSE A APPLIQUER ICI -->
     <header class="">
 
@@ -263,6 +369,10 @@
             </div>
         </div>
     </main>
+
+
+
+
 </body>
 
 </html>
